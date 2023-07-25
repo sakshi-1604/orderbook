@@ -10,19 +10,22 @@ HeapOrderbook is a Solidity smart contract that maintains a max-heap unique orde
    cd heap-orderbook
 
 2. Install the required dependencies using npm:
+   ```bash
      npm install
 
-3. Compile the Solidity contract using Hardhat (you can change the network in hardhat.config.js if needed):
+4. Compile the Solidity contract using Hardhat (you can change the network in hardhat.config.js if needed):
+   ```bash
      npx hardhat compile
 
-4. Run the test suite to ensure the contract behaves as expected:
+6. Run the test suite to ensure the contract behaves as expected:
+   ```bash
      npx hardhat test
+   
+Deploy the contract to your desired Ethereum network (if needed). You can update the deployment settings in the deploy.js file.
 
-   Deploy the contract to your desired Ethereum network (if needed). You can update the deployment settings in the deploy.js file.
+Once the contract is deployed, you can interact with it using an Ethereum wallet or through a web3 provider.
 
-   Once the contract is deployed, you can interact with it using an Ethereum wallet or through a web3 provider.
-
-#Contract Functions
+# Contract Functions
 The HeapOrderbook contract includes the following functions:
 
 insert(uint256 orderId, uint256 price, uint256 quantity): Inserts a new order into the order book and maintains the max-heap property.
@@ -32,7 +35,7 @@ sortPrice(): Sorts the order prices in descending order.
 popMax(): Removes the order with the maximum price from the order book.
 getSortedPrices(): Returns an array of order prices sorted in descending order.
 
-#Versions
+# Versions
 hardhat: ^2.17.0
 ethers: ^6.6.4
 chai: ^4.3.7
