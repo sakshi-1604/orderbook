@@ -50,34 +50,43 @@ contract HeapOrderbook {
             minHeapify(minIndex);
         }
     }
-
-    function sortPrice() public {
-        buildHeap();
-        uint256 size = heapSize;
-        for (uint256 i = heapSize; i > 1; i--) {
-            Orderbook memory temp = orderHeap[1];
-            orderHeap[1] = orderHeap[i];
-            orderHeap[i] = temp;
-            heapSize--;
-            minHeapify(1);
+    
+    function getHeap() public view returns (Orderbook[] memory) {
+        Orderbook[] memory heapArray = new Orderbook[](heapSize);
+        for (uint256 i = 1; i <= heapSize; i++) {
+            heapArray[i - 1] = orderHeap[i];
         }
-        heapSize = size;
-        sortedPrices = new uint256[](size);
-        for (uint256 i = 0; i < size; i++) {
-            sortedPrices[i] = orderHeap[i + 1].price;
-        }
+        return heapArray;
     }
 
-    function findMax() public view returns (Orderbook memory) {
+function sortPrice() public {
+    for (uint256 i = 1; i < heapSize; i++) {
+        uint256 key = orderHeap[i + 1].price;
+        uint256 j = i;
+        while (j >= 1 && orderHeap[j].price < key) {
+            orderHeap[j + 1].price = orderHeap[j].price;
+            j--;
+        }
+        orderHeap[j + 1].price = key;
+    }
+
+    sortedPrices = new uint256[](heapSize);
+    for (uint256 i = 0; i < heapSize; i++) {
+        sortedPrices[i] = orderHeap[i + 1].price;
+    }
+}
+
+    function findMin() public view returns (Orderbook memory) {
         require(heapSize > 0, "Heap is empty");
         return orderHeap[heapSize];
     }
 
-    function findMin() public view returns (Orderbook memory) {
-        require(heapSize > 0, "Heap is empty");
-        return orderHeap[1];
-    }
+    function findMax() public view returns (Orderbook memory) {
+    require(heapSize > 0, "Heap is empty");
+    return orderHeap[1];
+}
 
+ 
   function popMax() public {
     require(heapSize > 0, "Heap is empty");
     uint256 maxOrderId = orderHeap[1].id;
@@ -85,12 +94,9 @@ contract HeapOrderbook {
     orderHeap[1] = orderHeap[heapSize];
     delete orderHeap[heapSize];
     heapSize--;
-    minHeapify(1);
+    minHeapify(1); 
     delete orderExists[maxOrderId];
 }
-
-
-
 
     function insert(uint256 orderId, uint256 price, uint256 quantity) public {
         require(orderId > 0, "Invalid Order ID");
@@ -118,5 +124,6 @@ contract HeapOrderbook {
        
         return sortedPrices;
     }
+
 }
 
