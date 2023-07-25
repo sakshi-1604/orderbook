@@ -16,15 +16,15 @@ npm install
   Open the `package.json` file and find the `devDependencies` section. Add the following 
   dependencies:
 
-      ```json
-          {
+      
+    {
     "devDependencies": {
     "@nomicfoundation/hardhat-chai-matchers": "^2.0.1",
     "@nomicfoundation/hardhat-ethers": "^3.0.4",
     "@nomicfoundation/hardhat-toolbox": "^3.0.0",
     "@openzeppelin/test-helpers": "^0.5.16"
      }
-                  }
+    }
 
 2. Install the required dependencies using npm:
    ```bash
