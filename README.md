@@ -10,6 +10,22 @@ HeapOrderbook is a Solidity smart contract that maintains a max-heap unique orde
    
    cd heap-orderbook
 
+npm install
+   Add the required devDependencies to your project:
+
+  Open the `package.json` file and find the `devDependencies` section. Add the following 
+  dependencies:
+
+      ```json
+          {
+    "devDependencies": {
+    "@nomicfoundation/hardhat-chai-matchers": "^2.0.1",
+    "@nomicfoundation/hardhat-ethers": "^3.0.4",
+    "@nomicfoundation/hardhat-toolbox": "^3.0.0",
+    "@openzeppelin/test-helpers": "^0.5.16"
+     }
+                  }
+
 2. Install the required dependencies using npm:
    ```bash
      npm install
@@ -40,8 +56,8 @@ The HeapOrderbook contract includes the following functions:
 hardhat: ^2.17.0\
 ethers: ^6.6.4\
 chai: ^4.3.7 <br />
-hardhat-gas-reporter: ^1.0.9
-@nomicfoundation/hardhat-chai-matchers: ^2.0.1
-@nomicfoundation/hardhat-ethers: ^3.0.4
-@nomicfoundation/hardhat-toolbox: ^3.0.0
-@openzeppelin/test-helpers: ^0.5.16
+hardhat-gas-reporter: ^1.0.9\
+@nomicfoundation/hardhat-chai-matchers: ^2.0.1\
+@nomicfoundation/hardhat-ethers: ^3.0.4\
+@nomicfoundation/hardhat-toolbox: ^3.0.0\
+@openzeppelin/test-helpers: ^0.5.16\
