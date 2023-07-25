@@ -60,4 +60,4 @@ hardhat-gas-reporter: ^1.0.9\
 @nomicfoundation/hardhat-chai-matchers: ^2.0.1\
 @nomicfoundation/hardhat-ethers: ^3.0.4\
 @nomicfoundation/hardhat-toolbox: ^3.0.0\
-@openzeppelin/test-helpers: ^0.5.16\
+@openzeppelin/test-helpers: ^0.5.16
