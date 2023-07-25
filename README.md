@@ -6,7 +6,8 @@ HeapOrderbook is a Solidity smart contract that maintains a max-heap unique orde
 
 1. Clone the repository to your local machine:
    ```bash
-   git clone https://github.com/your-username/heap-orderbook.git
+   git clone https://github.com/sakshi-1604/orderbook.git
+   
    cd heap-orderbook
 
 2. Install the required dependencies using npm:
@@ -28,17 +29,17 @@ Once the contract is deployed, you can interact with it using an Ethereum wallet
 # Contract Functions
 The HeapOrderbook contract includes the following functions:
 
-insert(uint256 orderId, uint256 price, uint256 quantity): Inserts a new order into the order book and maintains the max-heap property.
-findMax(): Returns the order with the maximum price in the order book.
-findMin(): Returns the order with the minimum price in the order book.
-sortPrice(): Sorts the order prices in descending order.
-popMax(): Removes the order with the maximum price from the order book.
-getSortedPrices(): Returns an array of order prices sorted in descending order.
+1. insert(uint256 orderId, uint256 price, uint256 quantity): Inserts a new order into the order book and maintains the max-heap property.
+2. findMax(): Returns the order with the maximum price in the order book.
+3. findMin(): Returns the order with the minimum price in the order book.
+4. sortPrice(): Sorts the order prices in descending order.
+5. popMax(): Removes the order with the maximum price from the order book.
+6. getSortedPrices(): Returns an array of order prices sorted in descending order.
 
 # Versions
-hardhat: ^2.17.0
-ethers: ^6.6.4
-chai: ^4.3.7
+hardhat: ^2.17.0\
+ethers: ^6.6.4\
+chai: ^4.3.7 <br />
 hardhat-gas-reporter: ^1.0.9
 @nomicfoundation/hardhat-chai-matchers: ^2.0.1
 @nomicfoundation/hardhat-ethers: ^3.0.4
